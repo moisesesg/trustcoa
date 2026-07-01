@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>What a Real COA Includes — and How to Spot a Fake | TrustCOA</title>
+<meta name="description" content="Anatomy of a legitimate Certificate of Analysis: the six required sections, test methods like HPLC and LC-MS, how to read a results table, and a practical checklist for spotting copied letterhead, mismatched lots, and edited PDFs." />
+<link rel="canonical" href="https://trustcoa.com/what-a-real-coa-includes.html" />
+<meta property="og:title" content="What a Real COA Includes — and How to Spot a Fake" />
+<meta property="og:description" content="Learn the anatomy of a legitimate Certificate of Analysis and the specific signs that reveal a document has been copied, altered, or fabricated." />
+<meta property="og:url" content="https://trustcoa.com/what-a-real-coa-includes.html" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="TrustCOA" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="What a Real COA Includes — and How to Spot a Fake" />
+<meta name="twitter:description" content="Anatomy of a real COA and a practical checklist for spotting fakes: copied letterhead, mismatched lots, missing methods, and edited PDFs." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<!-- Article schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What a Real COA Includes — and How to Spot a Fake",
+  "description": "Anatomy of a legitimate Certificate of Analysis: the six required sections, test methods like HPLC and LC-MS, how to read a results table, and a practical checklist for spotting copied letterhead, mismatched lots, and edited PDFs.",
+  "author": {
+    "@type": "Organization",
+    "name": "TrustCOA",
+    "url": "https://trustcoa.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "TrustCOA",
+    "url": "https://trustcoa.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://app.trustcoa.com/favicon.ico"
+    }
+  },
+  "datePublished": "2026-06-30",
+  "dateModified": "2026-06-30",
+  "mainEntityOfPage": "https://trustcoa.com/what-a-real-coa-includes.html"
+}
+</script>
+
+<!-- FAQPage schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the six sections every legitimate COA must contain?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every legitimate COA should contain: (1) Laboratory header — the full legal name, physical address, phone, and accreditation number of the issuing lab; (2) Sample identification — product name, lot or batch number, sample ID, and manufacturer's information; (3) Testing dates — the date the sample was received and the date testing was completed; (4) Test methods — the specific analytical technique used for each measurement, such as HPLC for purity or LC-MS/MS for identity confirmation; (5) Results table — each analyte listed with its measured value, unit, specification limit, and a pass/fail determination; (6) Authorized signature — the name, title, and signature of the qualified laboratory scientist responsible for the report."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is HPLC and why does it appear on COAs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "HPLC stands for High-Performance Liquid Chromatography. It is a standard analytical technique used to separate and quantify compounds in a solution by passing the sample through a column under high pressure. On a COA, HPLC is typically used to measure purity — specifically, what percentage of the measured material is the target compound versus related impurities. A purity result reported without naming the method provides no basis for evaluating how reliable the measurement is."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is LC-MS and why does identity confirmation matter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LC-MS (Liquid Chromatography-Mass Spectrometry) and its more sensitive variant LC-MS/MS pair chromatographic separation with mass detection to confirm the molecular identity of a compound. Purity testing by HPLC tells you what fraction of the material is one compound; mass spectrometry tells you which compound it actually is. Both types of data together — identity and purity — are necessary for a meaningful COA. A document that reports purity without identity confirmation cannot rule out a high-purity sample of the wrong compound."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I tell if a COA has been digitally altered?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Several approaches can reveal digital alteration. First, check the PDF metadata using file properties or a tool like ExifTool: if the modification date is significantly later than the document's creation or issue date, the file was changed after issuance. Second, look for font inconsistencies in the results table — edited values are sometimes in a different typeface, size, or color from the surrounding text. Third, copy-paste specific text from the document: characters in an edited PDF sometimes resolve to unexpected Unicode values or fail to copy cleanly. Fourth, contact the issuing laboratory directly and ask them to confirm the specific report number and lot number — they will either confirm or deny that the document matches their records."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a specification and a test result on a COA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A specification is the acceptable range or threshold set in advance — for example, 'purity ≥ 98.0%' or 'microbial count ≤ 100 CFU/g.' A test result is the actual measured value returned by the laboratory instrument for that specific sample — for example, '98.7%' or '42 CFU/g.' A real COA presents both: the specification limit (what was required) and the actual result (what was found), along with an explicit pass or fail determination. A document that lists only results without specifications, or only pass/fail without showing the actual measured values, is incomplete."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+/* ============================================================
+   DESIGN SYSTEM — TrustCOA native static build
+   8px base grid · Electric-cobalt accent · Dark-mode premium
+   ============================================================ */
+:root {
+  --col-bg:        #05070f;
+  --col-bg-2:      #080c18;
+  --col-surface:   rgba(255,255,255,0.04);
+  --col-surface-2: rgba(255,255,255,0.07);
+  --col-border:    rgba(255,255,255,0.08);
+  --col-border-2:  rgba(255,255,255,0.14);
+  --blue:          #0066FF;
+  --blue-hi:       #338bff;
+  --electric:      #00d4ff;
+  --cobalt:        #1a4fff;
+  --txt-primary:   #f0f4ff;
+  --txt-secondary: rgba(240,244,255,0.65);
+  --txt-tertiary:  rgba(240,244,255,0.38);
+  --glow-blue:     rgba(0,102,255,0.28);
+  --glow-elec:     rgba(0,212,255,0.22);
+  --s1:  8px;  --s2:  16px; --s3:  24px; --s4:  32px;
+  --s5:  40px; --s6:  48px; --s8:  64px; --s10: 80px; --s12: 96px;
+  --r-sm:  8px; --r-md:  12px; --r-lg:  16px; --r-xl:  20px; --r-2xl: 28px;
+  --ease-out: cubic-bezier(0.16,1,0.3,1);
+  --dur-fast: 150ms; --dur-med: 240ms; --dur-slow: 400ms;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(0,102,255,0.1) 0%, transparent 60%),
+              radial-gradient(ellipse 60% 60% at 80% 80%, rgba(0,212,255,0.06) 0%, transparent 50%),
+              var(--col-bg);
+  color: var(--txt-primary);
+  font-family: 'Inter', -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
+  font-feature-settings: "ss01" on, "cv11" on, "rlig" on;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+.mono { font-family: 'JetBrains Mono', 'Fira Code', monospace; }
+:focus-visible { outline: 2px solid var(--electric); outline-offset: 3px; border-radius: var(--r-sm); }
+.grad-text {
+  background: linear-gradient(135deg, var(--blue-hi) 0%, var(--electric) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+/* ── Nav ── */
+nav {
+  position: sticky; top: 0; left: 0; right: 0; z-index: 50;
+  padding: var(--s2) var(--s4);
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(5,7,15,0.85);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border-bottom: 1px solid var(--col-border);
+}
+.nav-logo { display: flex; align-items: center; gap: var(--s1); text-decoration: none; }
+.nav-logo-mark {
+  width: 32px; height: 32px;
+  background: linear-gradient(135deg, var(--blue), var(--electric));
+  border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 14px; color: #fff; box-shadow: 0 0 16px var(--glow-blue); flex-shrink: 0;
+}
+.nav-logo-name { font-size: 15px; font-weight: 700; letter-spacing: -0.02em; color: var(--txt-primary); }
+.nav-logo-name span { background: linear-gradient(135deg, var(--blue-hi), var(--electric)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.nav-actions { display: flex; align-items: center; gap: var(--s2); }
+.nav-link { font-size: 14px; font-weight: 500; color: var(--txt-secondary); text-decoration: none; transition: color var(--dur-fast); }
+.nav-link:hover { color: var(--txt-primary); }
+.nav-cta {
+  display: inline-flex; align-items: center; gap: var(--s1);
+  padding: 9px var(--s2); border-radius: var(--r-md);
+  background: var(--blue); color: #fff; font-size: 14px; font-weight: 600; text-decoration: none;
+  box-shadow: 0 4px 16px var(--glow-blue);
+  transition: transform var(--dur-fast), box-shadow var(--dur-fast);
+}
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 28px var(--glow-blue); }
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 15px 28px; border-radius: var(--r-lg);
+  font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600;
+  text-decoration: none; cursor: pointer; border: none;
+  transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out);
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--blue) 0%, var(--cobalt) 100%);
+  color: #fff;
+  box-shadow: 0 0 0 1px rgba(0,102,255,0.4), 0 8px 32px var(--glow-blue);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 0 1px rgba(0,102,255,0.6), 0 16px 48px var(--glow-blue); }
+.btn-primary:active { transform: translateY(0); }
+.arrow-icon::after { content: '→'; font-style: normal; transition: transform var(--dur-fast) var(--ease-out); display: inline-block; }
+.btn:hover .arrow-icon::after { transform: translateX(3px); }
+.cta-row { display: flex; gap: var(--s2); justify-content: center; flex-wrap: wrap; margin-top: var(--s4); }
+
+/* ── Kicker ── */
+.kicker {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--electric);
+  margin-bottom: var(--s2); display: inline-flex; align-items: center; gap: var(--s1);
+}
+.kicker::before {
+  content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--electric); box-shadow: 0 0 10px var(--electric);
+  animation: kicker-pulse 2s ease-in-out infinite;
+}
+@keyframes kicker-pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.4; transform:scale(0.8); } }
+
+/* ── Article layout ── */
+.article-hero {
+  padding: var(--s12) var(--s4) var(--s8);
+  text-align: center;
+}
+.article-hero h1 {
+  font-size: clamp(32px, 5.5vw, 60px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.08;
+  margin-bottom: var(--s3); max-width: 840px; margin-left: auto; margin-right: auto;
+}
+.article-hero .hero-meta {
+  font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.08em;
+  color: var(--txt-tertiary); text-transform: uppercase; margin-bottom: var(--s3);
+}
+.article-hero .hero-lead {
+  font-size: clamp(16px, 1.8vw, 19px); color: var(--txt-secondary);
+  max-width: 640px; margin: 0 auto; line-height: 1.7;
+}
+
+.article-body {
+  max-width: 740px; margin: 0 auto; padding: 0 var(--s4) var(--s12);
+}
+.article-body h2 {
+  font-size: clamp(22px, 3vw, 30px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.2;
+  margin-top: var(--s8); margin-bottom: var(--s3); color: var(--txt-primary);
+}
+.article-body h3 {
+  font-size: 18px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.3;
+  margin-top: var(--s5); margin-bottom: var(--s2); color: var(--txt-primary);
+}
+.article-body p {
+  font-size: 16px; color: var(--txt-secondary); line-height: 1.75; margin-bottom: var(--s3);
+}
+.article-body ul, .article-body ol {
+  padding-left: var(--s4); margin-bottom: var(--s3);
+}
+.article-body li {
+  font-size: 16px; color: var(--txt-secondary); line-height: 1.75; margin-bottom: var(--s1);
+}
+.article-body li::marker { color: var(--electric); }
+.article-body strong { color: var(--txt-primary); font-weight: 600; }
+
+/* ── Section anatomy cards ── */
+.anatomy-grid {
+  display: flex; flex-direction: column; gap: var(--s3); margin: var(--s4) 0;
+}
+.anatomy-card {
+  background: var(--col-surface); border: 1px solid var(--col-border);
+  border-radius: var(--r-lg); padding: var(--s4);
+  display: flex; gap: var(--s3); align-items: flex-start;
+}
+.anatomy-num {
+  flex-shrink: 0; width: 36px; height: 36px;
+  background: linear-gradient(135deg, var(--blue), var(--cobalt));
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 14px; color: #fff; box-shadow: 0 0 16px var(--glow-blue);
+}
+.anatomy-content h3 {
+  margin-top: 0; margin-bottom: 6px; font-size: 16px; font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.anatomy-content p { margin-bottom: 0; font-size: 15px; }
+
+/* ── Methods table ── */
+.methods-table {
+  width: 100%; border-collapse: collapse; margin: var(--s4) 0; font-size: 14px;
+}
+.methods-table th {
+  text-align: left; padding: var(--s2);
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--electric);
+  border-bottom: 1px solid var(--col-border-2);
+}
+.methods-table td {
+  padding: var(--s2); vertical-align: top;
+  border-bottom: 1px solid var(--col-border);
+  color: var(--txt-secondary); line-height: 1.6;
+}
+.methods-table tr:hover td { background: var(--col-surface); }
+.method-name { font-family: 'JetBrains Mono', monospace; font-weight: 600; color: var(--electric); white-space: nowrap; }
+td.col-what { color: var(--txt-primary); font-weight: 500; }
+
+/* ── Fake tactics ── */
+.fake-list { list-style: none; padding: 0; margin: var(--s3) 0; }
+.fake-list li {
+  padding: var(--s3) 0; border-bottom: 1px solid var(--col-border);
+  display: grid; grid-template-columns: auto 1fr; gap: var(--s2); align-items: flex-start;
+}
+.fake-list li:last-child { border-bottom: none; }
+.fake-tag {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase; color: #ff4d4d;
+  background: rgba(255,77,77,0.1); border: 1px solid rgba(255,77,77,0.25);
+  border-radius: var(--r-sm); padding: 3px 8px; white-space: nowrap; margin-top: 2px;
+}
+.fake-content { font-size: 15px; color: var(--txt-secondary); line-height: 1.65; }
+.fake-content strong { color: var(--txt-primary); }
+
+/* ── Callout box ── */
+.callout {
+  background: var(--col-surface); border: 1px solid var(--col-border);
+  border-left: 3px solid var(--electric);
+  border-radius: var(--r-lg); padding: var(--s4);
+  margin: var(--s4) 0;
+}
+.callout p { margin-bottom: 0; }
+
+/* ── Checklist ── */
+.checklist { list-style: none; padding: 0; margin: var(--s3) 0; }
+.checklist li {
+  display: flex; gap: var(--s2); align-items: flex-start;
+  padding: 10px 0; border-bottom: 1px solid var(--col-border);
+  font-size: 15px; color: var(--txt-secondary); line-height: 1.65;
+}
+.checklist li:last-child { border-bottom: none; }
+.check-icon {
+  flex-shrink: 0; width: 22px; height: 22px; margin-top: 1px;
+  background: rgba(0,212,255,0.12); border: 1px solid rgba(0,212,255,0.3);
+  border-radius: 4px; display: flex; align-items: center; justify-content: center;
+  font-size: 13px; color: var(--electric); font-weight: 700;
+}
+
+/* ── CTA band ── */
+.cta-band {
+  background: linear-gradient(135deg, rgba(0,102,255,0.12) 0%, rgba(0,212,255,0.06) 100%);
+  border: 1px solid rgba(0,102,255,0.25);
+  border-radius: var(--r-2xl); padding: var(--s8) var(--s6);
+  text-align: center; margin: var(--s8) 0;
+}
+.cta-band h2 { font-size: clamp(22px, 3vw, 34px); font-weight: 800; letter-spacing: -0.025em; margin-bottom: var(--s2); }
+.cta-band p { font-size: 16px; color: var(--txt-secondary); max-width: 520px; margin: 0 auto var(--s4); line-height: 1.65; }
+
+/* ── Section divider ── */
+.section-divider { border: none; border-top: 1px solid var(--col-border); margin: var(--s6) 0; }
+
+/* ── Footer ── */
+footer {
+  position: relative; z-index: 20;
+  background: var(--col-bg-2); border-top: 1px solid var(--col-border);
+  padding: var(--s10) var(--s4) var(--s12); text-align: center;
+}
+.footer-logo { display: inline-flex; align-items: center; gap: var(--s2); margin-bottom: var(--s4); }
+.footer-logo-mark {
+  width: 36px; height: 36px;
+  background: linear-gradient(135deg, var(--blue), var(--electric));
+  border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 16px; color: #fff;
+}
+.footer-logo-name { font-size: 17px; font-weight: 700; letter-spacing: -0.02em; color: var(--txt-primary); }
+.footer-nav { display: flex; gap: var(--s5); justify-content: center; flex-wrap: wrap; margin-bottom: var(--s4); }
+.footer-nav a { font-size: 14px; color: var(--txt-secondary); text-decoration: none; transition: color var(--dur-fast); }
+.footer-nav a:hover { color: var(--electric); }
+.footer-divider { width: 48px; height: 1px; background: linear-gradient(90deg, transparent, var(--col-border-2), transparent); margin: var(--s4) auto; }
+footer .sig { font-size: 14px; font-weight: 600; color: var(--txt-secondary); }
+footer .ph { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--txt-tertiary); margin-top: var(--s1); }
+footer .legal {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--txt-tertiary);
+  margin-top: var(--s3); line-height: 1.75; max-width: 580px; margin-left: auto; margin-right: auto;
+}
+footer a { color: var(--electric); text-decoration: none; transition: opacity var(--dur-fast); }
+footer a:hover { opacity: 0.75; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .article-hero { padding: var(--s8) var(--s3) var(--s6); }
+  .article-body { padding: 0 var(--s3) var(--s8); }
+  .nav-link { display: none; }
+  .anatomy-card { flex-direction: column; gap: var(--s2); }
+  .methods-table { font-size: 13px; }
+  .cta-band { padding: var(--s5) var(--s3); }
+  .fake-list li { grid-template-columns: 1fr; }
+  .fake-tag { display: inline-block; margin-bottom: 6px; }
+}
+@media (max-width: 480px) {
+  .cta-row { flex-direction: column; align-items: center; }
+  .btn { width: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Nav ── -->
+<nav id="navbar">
+  <a href="/" class="nav-logo" aria-label="TrustCOA home">
+    <div class="nav-logo-mark">T</div>
+    <span class="nav-logo-name">Trust<span>COA</span></span>
+  </a>
+  <div class="nav-actions">
+    <a href="verify.html" class="nav-link">See a live demo</a>
+    <a href="https://api.leadconnectorhq.com/widget/booking/B34bzkvHufP56WFsFhxm" class="nav-cta" target="_blank" rel="noopener">
+      Book a call <span class="arrow-icon"></span>
+    </a>
+  </div>
+</nav>
+
+<!-- ── Article hero ── -->
+<header class="article-hero">
+  <div class="kicker">COA Anatomy &amp; Fraud Detection</div>
+  <h1>What a Real COA Includes — <span class="grad-text">and How to Spot a Fake</span></h1>
+  <p class="hero-meta">Published 2026-06-30 &nbsp;&middot;&nbsp; By TrustCOA</p>
+  <p class="hero-lead">The difference between a legitimate Certificate of Analysis and a fabricated one often comes down to a handful of specific fields. This guide walks through each section of a real COA, explains what the test methods actually mean, and gives you a practical checklist for identifying altered documents.</p>
+</header>
+
+<!-- ── Article body ── -->
+<main class="article-body" id="main-content">
+
+  <h2>The Six Sections of a Legitimate COA</h2>
+  <p>A complete Certificate of Analysis from an accredited third-party laboratory contains six identifiable sections. Each serves a distinct purpose, and the absence of any one of them should prompt scrutiny.</p>
+
+  <div class="anatomy-grid">
+
+    <div class="anatomy-card">
+      <div class="anatomy-num">1</div>
+      <div class="anatomy-content">
+        <h3>Laboratory Header and Identity</h3>
+        <p>The top of a legitimate COA identifies the issuing laboratory by its full legal name, physical address, phone number, and accreditation number. This is not the brand or manufacturer — it is the independent analytical laboratory that performed the testing. The accreditation number links to a verifiable entry in a public registry (such as A2LA or PJLA for ISO/IEC 17025-accredited labs in the United States). If the "laboratory" listed is the same company selling the product, the document is not an independent COA.</p>
+      </div>
+    </div>
+
+    <div class="anatomy-card">
+      <div class="anatomy-num">2</div>
+      <div class="anatomy-content">
+        <h3>Sample Identification</h3>
+        <p>This section identifies what was tested: the product or compound name using standard chemical nomenclature, the lot number or batch number assigned by the manufacturer, a laboratory-assigned sample ID, and typically the name and address of the client who submitted the sample. The lot number in this section is the one that must match the lot number printed on the physical product label exactly.</p>
+      </div>
+    </div>
+
+    <div class="anatomy-card">
+      <div class="anatomy-num">3</div>
+      <div class="anatomy-content">
+        <h3>Testing Dates</h3>
+        <p>Two dates matter: the date the laboratory received the sample, and the date testing was completed (sometimes called the analysis date or report date). The receipt date must precede the analysis date. Both should be consistent with the manufacturer's stated production timeline. A COA dated before the product could plausibly have been manufactured is a significant anomaly.</p>
+      </div>
+    </div>
+
+    <div class="anatomy-card">
+      <div class="anatomy-num">4</div>
+      <div class="anatomy-content">
+        <h3>Analytical Methods</h3>
+        <p>Each test result on a legitimate COA is tied to the specific analytical method used to produce it. Without named methods, a result is an assertion, not a measurement. The section below covers the methods most commonly referenced on research compound COAs.</p>
+      </div>
+    </div>
+
+    <div class="anatomy-card">
+      <div class="anatomy-num">5</div>
+      <div class="anatomy-content">
+        <h3>Results Table with Specifications</h3>
+        <p>The results table lists each analyte tested (purity, identity, moisture, residual solvents, heavy metals, microbial counts, endotoxin, etc.), the measured result, the unit of measurement, the specification limit, and an explicit pass or fail determination. The specification is the acceptable threshold set in advance. The result is what the instrument actually measured. A document that shows only pass/fail without the measured values, or shows results without specifications to compare against, is incomplete.</p>
+      </div>
+    </div>
+
+    <div class="anatomy-card">
+      <div class="anatomy-num">6</div>
+      <div class="anatomy-content">
+        <h3>Authorized Signature</h3>
+        <p>A legitimate COA is signed by a qualified laboratory scientist — the person responsible for the accuracy of the reported data. The signature should include the signer's name and title. Some laboratories use auditable electronic signatures with timestamp and identity verification; this is acceptable provided the electronic signature system is compliant with applicable standards (e.g., 21 CFR Part 11 for FDA-regulated contexts). An unsigned document is not a complete COA.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <h2>Understanding the Analytical Methods Named on a COA</h2>
+  <p>The method citation on a COA is not boilerplate — it is the single piece of information that allows an independent reviewer to evaluate whether the measurement was conducted with appropriate rigor. Here are the methods most commonly referenced in research compound COAs:</p>
+
+  <table class="methods-table" role="table" aria-label="Analytical methods on COAs">
+    <thead>
+      <tr>
+        <th scope="col">Method</th>
+        <th scope="col">What it measures</th>
+        <th scope="col">Why it matters</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="method-name">HPLC</td>
+        <td class="col-what">Purity (% of target compound vs. impurities)</td>
+        <td>High-Performance Liquid Chromatography separates compounds and quantifies each peak. The target compound's peak area relative to all peaks gives the purity percentage. Standard method for purity in supplement and research compound COAs.</td>
+      </tr>
+      <tr>
+        <td class="method-name">LC-MS / LC-MS/MS</td>
+        <td class="col-what">Molecular identity confirmation</td>
+        <td>Liquid Chromatography-Mass Spectrometry confirms that the compound's measured molecular mass matches the target compound. LC-MS/MS adds a second fragmentation stage for more definitive structural identification. Purity without identity confirmation cannot rule out a high-purity sample of the wrong compound.</td>
+      </tr>
+      <tr>
+        <td class="method-name">ICP-MS</td>
+        <td class="col-what">Heavy metal content (arsenic, cadmium, lead, mercury)</td>
+        <td>Inductively Coupled Plasma-Mass Spectrometry measures trace elemental concentrations at parts-per-billion levels. Required for heavy metal testing in supplements and necessary for materials where raw material sourcing may introduce metallic contaminants.</td>
+      </tr>
+      <tr>
+        <td class="method-name">Karl Fischer Titration</td>
+        <td class="col-what">Moisture / water content</td>
+        <td>A precise electrochemical method for quantifying water in a sample. Relevant for lyophilized (freeze-dried) research compounds where moisture content affects stability and concentration calculations.</td>
+      </tr>
+      <tr>
+        <td class="method-name">USP &lt;85&gt; LAL / rFC</td>
+        <td class="col-what">Bacterial endotoxin (lipopolysaccharide)</td>
+        <td>Limulus Amebocyte Lysate (LAL) and recombinant Factor C (rFC) assays detect endotoxins from gram-negative bacteria. Critical for injectable or reconstituted research compounds. Results reported in EU/mL.</td>
+      </tr>
+      <tr>
+        <td class="method-name">GC-MS / GC-FID</td>
+        <td class="col-what">Residual solvents</td>
+        <td>Gas Chromatography with Mass Spectrometry or Flame Ionization Detection identifies and quantifies trace solvents remaining from synthesis. ICH Q3C residual solvent limits apply to pharmaceutical-grade materials.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>How to Read a Results Table</h2>
+  <p>The results table is the core data section of the COA. Each row typically contains: the analyte name; the test method; the specification (the acceptable limit or range); the result (the actual measured value); and a pass/fail determination.</p>
+  <p>For example, a purity row might read: <strong>Purity | HPLC | ≥ 98.0% | 98.7% | PASS</strong>. The specification says the material must be at least 98.0% pure. The instrument measured 98.7%. The result exceeds the specification, so it passes.</p>
+  <p>A result that reads <strong>0.00 ppm</strong> for every heavy metal analyte — rather than values that vary at trace levels — may indicate the table was filled in manually rather than populated from instrument data. Real instrumental measurements rarely produce uniformly zero results across an entire metals panel.</p>
+
+  <div class="callout">
+    <p><strong>About TrustCOA's role:</strong> TrustCOA hosts and displays the COA files that brands upload from their independent laboratories. We are the display layer — we do not run the analytical tests, certify laboratory credentials, or vouch for the underlying data. The accuracy and authenticity of the lab data remains the brand's responsibility. Our infrastructure ensures that published COA data is permanently accessible at a stable URL for any buyer to retrieve by lot number.</p>
+  </div>
+
+  <h2>Common Fake COA Tactics — and How to Identify Them</h2>
+  <p>COA fraud in the supplement and research compound space has become more sophisticated as buyers have become more demanding. Here are the patterns most frequently observed:</p>
+
+  <ul class="fake-list" role="list">
+
+    <li>
+      <span class="fake-tag">Copied letterhead</span>
+      <span class="fake-content"><strong>What it looks like:</strong> The COA uses the name and logo of a real, accredited laboratory, but the document was not actually issued by that lab. The contact information may be slightly different, or the accreditation number may not be current. <strong>How to catch it:</strong> Call the laboratory directly using a number sourced from the accrediting body's registry, not the COA, and ask whether they issued a specific report number for a specific lot.</span>
+    </li>
+
+    <li>
+      <span class="fake-tag">Mismatched lot numbers</span>
+      <span class="fake-content"><strong>What it looks like:</strong> The lot number on the COA differs from the lot number on the physical product label — different digits, different prefix, or the label has no lot number at all. <strong>How to catch it:</strong> Compare the two directly. A single character difference is a mismatch, not a close match. A passing COA from a different lot number says nothing about the lot you have.</span>
+    </li>
+
+    <li>
+      <span class="fake-tag">Missing methods</span>
+      <span class="fake-content"><strong>What it looks like:</strong> The results table lists purity at 99.2% but does not state whether this was measured by HPLC, UV spectrophotometry, or some other technique. <strong>Why it matters:</strong> Without a named method, the number is unverifiable. Different methods have different selectivities and detection limits, and a purity result from a less rigorous method may not reflect actual compound content.</span>
+    </li>
+
+    <li>
+      <span class="fake-tag">No accreditation</span>
+      <span class="fake-content"><strong>What it looks like:</strong> The COA is issued by a laboratory that lists no ISO 17025 accreditation number, or lists a number that cannot be found in any accrediting body's public registry. <strong>Why it matters:</strong> An unaccredited laboratory has not been independently assessed for measurement competence, calibration traceability, or measurement uncertainty. Results from unaccredited labs cannot be independently validated.</span>
+    </li>
+
+    <li>
+      <span class="fake-tag">Edited PDF</span>
+      <span class="fake-content"><strong>What it looks like:</strong> A real COA from a legitimate lab, with values altered — typically purity increased or failed analytes changed to passing. <strong>How to catch it:</strong> Check PDF metadata for a modification date after the document issue date. Look for font inconsistencies in the results rows. Contact the laboratory to confirm the specific result values on file for that report number.</span>
+    </li>
+
+    <li>
+      <span class="fake-tag">Reused document</span>
+      <span class="fake-content"><strong>What it looks like:</strong> A legitimate COA from a previous lot is presented as documentation for a current, different lot — either because the current lot was never tested, or because the current lot failed testing. <strong>How to catch it:</strong> The lot number mismatch is the tell. If the lot on the COA matches a previous batch, it is not documentation for the current one, regardless of whether both batches are the same compound.</span>
+    </li>
+
+  </ul>
+
+  <h2>Why Independent Hosted Verification Closes the Gap</h2>
+  <p>The structural problem with PDF-based COA distribution is that any document that passes through an email chain or cloud storage link can be silently replaced or modified between issuance and receipt. A buyer has no reliable way to confirm the file they received is identical to the file the laboratory issued.</p>
+  <p>Hosted verification addresses this by eliminating the file-transfer step. When a brand publishes its COA data to a permanent URL — for example, at <span class="mono" style="font-size:14px;color:var(--electric);">yourbrand.com/verify</span> — a buyer can navigate to that URL independently, type a lot number, and retrieve the data the brand has published. The buyer's access to the data does not depend on any file the seller provided directly. The URL either returns a record for that lot or it does not.</p>
+  <p>This is the specific problem TrustCOA is built to solve: giving brands the infrastructure to publish their laboratory-issued COA data to a permanent, branded, publicly accessible location where any buyer can verify any lot independently — without receiving, handling, or trusting a PDF file.</p>
+
+  <hr class="section-divider" />
+
+  <!-- Closing CTA -->
+  <div class="cta-band">
+    <div class="kicker">From PDF to permanent URL</div>
+    <h2>Give buyers a page to verify — <span class="grad-text">not a file to trust.</span></h2>
+    <p>TrustCOA hosts your COA data on your own domain. Batch lookup, QR per vial, your branding. Any buyer, any lot, any time.</p>
+    <div class="cta-row">
+      <a href="https://api.leadconnectorhq.com/widget/booking/B34bzkvHufP56WFsFhxm" class="btn btn-primary" target="_blank" rel="noopener">
+        Book a 15-minute call <span class="arrow-icon"></span>
+      </a>
+    </div>
+  </div>
+
+  <h2>COA Verification Checklist</h2>
+  <p>Use this checklist when evaluating any Certificate of Analysis for a research compound or supplement:</p>
+
+  <ul class="checklist" role="list">
+    <li><span class="check-icon" aria-hidden="true">&#10003;</span><span>Laboratory header names a specific accredited third-party lab — not the manufacturer or brand.</span></li>
+    <li><span class="check-icon" aria-hidden="true">&#10003;</span><span>Accreditation number is present and can be verified in the relevant body's public registry (A2LA, PJLA, or equivalent).</span></li>
+    <li><span class="check-icon" aria-hidden="true">&#10003;</span><span>Lot number on the COA exactly matches the lot number on the physical product label.</span></li>
+    <li><span class="check-icon" aria-hidden="true">&#10003;</span><span>Sample receipt date precedes the analysis/report date. Both are consistent with the production timeline.</span></li>
+    <li><span class="check-icon" aria-hidden="true">&#10003;</span><span>An analytical method is named for each key result (HPLC for purity, LC-MS/MS for identity, ICP-MS for heavy metals, etc.).</span></li>
+    <li><span class="check-icon" aria-hidden="true">&#10003;</span><span>Results table shows both the specification limit and the actual measured result for each analyte — not only pass/fail.</span></li>
+    <li><span class="check-icon" aria-hidden="true">&#10003;</span><span>Numeric results across the metals panel do not all show exactly 0.00 — trace variability is normal in real instrument output.</span></li>
+    <li><span class="check-icon" aria-hidden="true">&#10003;</span><span>Document is signed by a named, titled laboratory scientist.</span></li>
+    <li><span class="check-icon" aria-hidden="true">&#10003;</span><span>PDF metadata modification date matches or precedes the document issue date (no post-issue editing).</span></li>
+    <li><span class="check-icon" aria-hidden="true">&#10003;</span><span>Laboratory contact information can be independently verified via the accrediting body's registry or the lab's verified website — not only via details printed on the COA.</span></li>
+    <li><span class="check-icon" aria-hidden="true">&#10003;</span><span>COA data is accessible at a permanent, brand-hosted URL (not solely as a PDF file distributed by the seller).</span></li>
+  </ul>
+
+</main>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-logo">
+    <div class="footer-logo-mark">T</div>
+    <span class="footer-logo-name">TrustCOA</span>
+  </div>
+  <div class="sig">Verification infrastructure for modern brands</div>
+  <div class="ph">(251) 387-7712</div>
+  <div class="footer-nav" style="margin-top:var(--s3);">
+    <a href="/">Home</a>
+    <a href="verify.html">Live demo</a>
+    <a href="how-to-verify-a-coa.html">Verify a COA</a>
+    <a href="what-a-real-coa-includes.html">Real vs. Fake COA</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="legal">
+    &copy; 2026 TrustCOA &mdash; a Smart Services LLC service.<br/>
+    TrustCOA is a display and hosting layer. We do not test, verify, or vouch for any compound &mdash; all lab data is supplied by the vendor and their independent labs, and remains the vendor's responsibility. Research-use-only infrastructure.<br/><br/>
+    <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms of Service</a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>How to Verify a Certificate of Analysis (COA): A Complete Guide — TrustCOA</title>
+<meta name="description" content="A practical, accurate guide to verifying a Certificate of Analysis: what a real COA contains, how to confirm batch and lot numbers match, red flags of altered documents, and why hosted independent verification closes the PDF trust gap." />
+<link rel="canonical" href="https://trustcoa.com/how-to-verify-a-coa.html" />
+<meta property="og:title" content="How to Verify a Certificate of Analysis (COA): A Complete Guide" />
+<meta property="og:description" content="Learn what a legitimate COA contains, how to confirm it matches the batch you have, and how to spot altered or fake lab documents." />
+<meta property="og:url" content="https://trustcoa.com/how-to-verify-a-coa.html" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="TrustCOA" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="How to Verify a Certificate of Analysis (COA)" />
+<meta name="twitter:description" content="Practical guide: what a legitimate COA contains, how to confirm lot matching, and how to spot fakes." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<!-- Article schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Verify a Certificate of Analysis (COA): A Complete Guide",
+  "description": "A practical, accurate guide to verifying a Certificate of Analysis: what a real COA contains, how to confirm batch and lot numbers match, red flags of altered documents, and why hosted independent verification closes the PDF trust gap.",
+  "author": {
+    "@type": "Organization",
+    "name": "TrustCOA",
+    "url": "https://trustcoa.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "TrustCOA",
+    "url": "https://trustcoa.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://app.trustcoa.com/favicon.ico"
+    }
+  },
+  "datePublished": "2026-06-30",
+  "dateModified": "2026-06-30",
+  "mainEntityOfPage": "https://trustcoa.com/how-to-verify-a-coa.html"
+}
+</script>
+
+<!-- FAQPage schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a Certificate of Analysis (COA)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Certificate of Analysis is a formal document issued by an analytical laboratory that reports the test results for a specific batch of material. It includes the product name, lot or batch number, test date, the laboratory's identity and accreditation, each analyte tested with its measured result, the specification (pass/fail threshold), and an authorized signature. COAs are standard practice in pharmaceutical, nutraceutical, supplement, and research compound supply chains."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who issues a legitimate COA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Legitimate COAs are issued by accredited third-party analytical laboratories — not by the brand selling the product. The most recognized accreditation standard for analytical testing laboratories is ISO/IEC 17025, which covers competence, impartiality, and consistent operation. In the United States, accreditation bodies that certify labs to ISO 17025 include A2LA (American Association for Laboratory Accreditation) and PJLA (Perry Johnson Laboratory Accreditation). A COA issued solely by the manufacturer, with no independent laboratory involved, provides no independent verification."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What fields should every real COA include?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every legitimate COA should include: product or compound name; lot number and/or batch number; date of sample receipt and date of testing; laboratory name, address, and accreditation number; the analytical method used (e.g., HPLC, LC-MS/MS, ICP-MS); a results table listing each analyte, its measured value, unit of measurement, and specification limit; a pass or fail determination for each analyte; and an authorized signature or digital equivalent from a qualified laboratory scientist."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I confirm a COA matches the batch I actually have?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compare the lot number printed on the COA against the lot number on the physical label of your product. They must match exactly — not approximately. If possible, contact the issuing laboratory directly (using contact information you find independently, not contact details printed on the COA itself) to confirm the report number and lot are on file. Some laboratories offer report verification portals. Hosted platforms like TrustCOA allow brands to publish their COAs to a searchable, permanent URL so any buyer can look up a lot number independently without relying on a PDF file that could have been altered."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are common red flags of a fake or altered COA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Red flags include: the lot number on the COA does not match the physical label; the testing date predates the manufacturer's claimed production date; the accreditation number listed for the lab cannot be verified through the accrediting body's public registry; results appear rounded to suspiciously clean numbers across all analytes; the PDF metadata shows the document was edited after its reported issue date; the lab's address or phone number cannot be verified independently; and no test method (e.g., HPLC, LC-MS) is named for key identity or purity analytes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does lot number matching matter so much?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A COA is only meaningful when it describes the exact batch of material you have in hand. Manufacturers produce multiple lots of a given compound over time. Each lot is tested separately because raw material purity, synthesis conditions, and potential contaminants can differ between production runs. A passing COA from lot A tells you nothing definitive about lot B. Lot number matching is the chain-of-custody link that ties the analytical data to the specific physical material."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the problem with PDF COAs sent by email or shared via Google Drive?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A PDF file can be edited, re-saved, and redistributed without any visible indication of tampering. Standard PDF viewers display no modification history. A buyer receiving a PDF COA has no reliable way to confirm it was not altered between when the lab issued it and when it was sent to them. Hosted verification platforms address this by publishing the original lab file to an immutable, brand-controlled URL. Any buyer can navigate directly to that URL and see the data as published by the brand — without the file ever passing through an email chain."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+/* ============================================================
+   DESIGN SYSTEM — TrustCOA native static build
+   8px base grid · Electric-cobalt accent · Dark-mode premium
+   ============================================================ */
+:root {
+  --col-bg:        #05070f;
+  --col-bg-2:      #080c18;
+  --col-surface:   rgba(255,255,255,0.04);
+  --col-surface-2: rgba(255,255,255,0.07);
+  --col-border:    rgba(255,255,255,0.08);
+  --col-border-2:  rgba(255,255,255,0.14);
+  --blue:          #0066FF;
+  --blue-hi:       #338bff;
+  --electric:      #00d4ff;
+  --cobalt:        #1a4fff;
+  --txt-primary:   #f0f4ff;
+  --txt-secondary: rgba(240,244,255,0.65);
+  --txt-tertiary:  rgba(240,244,255,0.38);
+  --glow-blue:     rgba(0,102,255,0.28);
+  --glow-elec:     rgba(0,212,255,0.22);
+  --s1:  8px;  --s2:  16px; --s3:  24px; --s4:  32px;
+  --s5:  40px; --s6:  48px; --s8:  64px; --s10: 80px; --s12: 96px;
+  --r-sm:  8px; --r-md:  12px; --r-lg:  16px; --r-xl:  20px; --r-2xl: 28px;
+  --ease-out: cubic-bezier(0.16,1,0.3,1);
+  --dur-fast: 150ms; --dur-med: 240ms; --dur-slow: 400ms;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(0,102,255,0.1) 0%, transparent 60%),
+              radial-gradient(ellipse 60% 60% at 80% 80%, rgba(0,212,255,0.06) 0%, transparent 50%),
+              var(--col-bg);
+  color: var(--txt-primary);
+  font-family: 'Inter', -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
+  font-feature-settings: "ss01" on, "cv11" on, "rlig" on;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+.mono { font-family: 'JetBrains Mono', 'Fira Code', monospace; }
+:focus-visible { outline: 2px solid var(--electric); outline-offset: 3px; border-radius: var(--r-sm); }
+.grad-text {
+  background: linear-gradient(135deg, var(--blue-hi) 0%, var(--electric) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+/* ── Nav ── */
+nav {
+  position: sticky; top: 0; left: 0; right: 0; z-index: 50;
+  padding: var(--s2) var(--s4);
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(5,7,15,0.85);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border-bottom: 1px solid var(--col-border);
+}
+.nav-logo { display: flex; align-items: center; gap: var(--s1); text-decoration: none; }
+.nav-logo-mark {
+  width: 32px; height: 32px;
+  background: linear-gradient(135deg, var(--blue), var(--electric));
+  border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 14px; color: #fff; box-shadow: 0 0 16px var(--glow-blue); flex-shrink: 0;
+}
+.nav-logo-name { font-size: 15px; font-weight: 700; letter-spacing: -0.02em; color: var(--txt-primary); }
+.nav-logo-name span { background: linear-gradient(135deg, var(--blue-hi), var(--electric)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.nav-actions { display: flex; align-items: center; gap: var(--s2); }
+.nav-link { font-size: 14px; font-weight: 500; color: var(--txt-secondary); text-decoration: none; transition: color var(--dur-fast); }
+.nav-link:hover { color: var(--txt-primary); }
+.nav-cta {
+  display: inline-flex; align-items: center; gap: var(--s1);
+  padding: 9px var(--s2); border-radius: var(--r-md);
+  background: var(--blue); color: #fff; font-size: 14px; font-weight: 600; text-decoration: none;
+  box-shadow: 0 4px 16px var(--glow-blue);
+  transition: transform var(--dur-fast), box-shadow var(--dur-fast);
+}
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 28px var(--glow-blue); }
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 15px 28px; border-radius: var(--r-lg);
+  font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600;
+  text-decoration: none; cursor: pointer; border: none;
+  transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out);
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--blue) 0%, var(--cobalt) 100%);
+  color: #fff;
+  box-shadow: 0 0 0 1px rgba(0,102,255,0.4), 0 8px 32px var(--glow-blue);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 0 1px rgba(0,102,255,0.6), 0 16px 48px var(--glow-blue); }
+.btn-primary:active { transform: translateY(0); }
+.arrow-icon::after { content: '→'; font-style: normal; transition: transform var(--dur-fast) var(--ease-out); display: inline-block; }
+.btn:hover .arrow-icon::after { transform: translateX(3px); }
+.cta-row { display: flex; gap: var(--s2); justify-content: center; flex-wrap: wrap; margin-top: var(--s4); }
+
+/* ── Kicker ── */
+.kicker {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--electric);
+  margin-bottom: var(--s2); display: inline-flex; align-items: center; gap: var(--s1);
+}
+.kicker::before {
+  content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--electric); box-shadow: 0 0 10px var(--electric);
+  animation: kicker-pulse 2s ease-in-out infinite;
+}
+@keyframes kicker-pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.4; transform:scale(0.8); } }
+
+/* ── Article layout ── */
+.article-hero {
+  padding: var(--s12) var(--s4) var(--s8);
+  text-align: center;
+}
+.article-hero h1 {
+  font-size: clamp(32px, 5.5vw, 60px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.08;
+  margin-bottom: var(--s3); max-width: 840px; margin-left: auto; margin-right: auto;
+}
+.article-hero .hero-meta {
+  font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.08em;
+  color: var(--txt-tertiary); text-transform: uppercase; margin-bottom: var(--s3);
+}
+.article-hero .hero-lead {
+  font-size: clamp(16px, 1.8vw, 19px); color: var(--txt-secondary);
+  max-width: 640px; margin: 0 auto; line-height: 1.7;
+}
+
+.article-body {
+  max-width: 740px; margin: 0 auto; padding: 0 var(--s4) var(--s12);
+}
+.article-body h2 {
+  font-size: clamp(22px, 3vw, 30px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.2;
+  margin-top: var(--s8); margin-bottom: var(--s3); color: var(--txt-primary);
+}
+.article-body h3 {
+  font-size: 18px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.3;
+  margin-top: var(--s5); margin-bottom: var(--s2); color: var(--txt-primary);
+}
+.article-body p {
+  font-size: 16px; color: var(--txt-secondary); line-height: 1.75; margin-bottom: var(--s3);
+}
+.article-body ul, .article-body ol {
+  padding-left: var(--s4); margin-bottom: var(--s3);
+}
+.article-body li {
+  font-size: 16px; color: var(--txt-secondary); line-height: 1.75; margin-bottom: var(--s1);
+}
+.article-body li::marker { color: var(--electric); }
+.article-body strong { color: var(--txt-primary); font-weight: 600; }
+
+/* ── Callout box ── */
+.callout {
+  background: var(--col-surface); border: 1px solid var(--col-border);
+  border-left: 3px solid var(--electric);
+  border-radius: var(--r-lg); padding: var(--s4);
+  margin: var(--s4) 0;
+}
+.callout p { margin-bottom: 0; }
+
+/* ── Field table ── */
+.field-table {
+  width: 100%; border-collapse: collapse; margin: var(--s4) 0;
+  font-size: 14px;
+}
+.field-table th {
+  text-align: left; padding: var(--s2) var(--s2);
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--electric);
+  border-bottom: 1px solid var(--col-border-2);
+}
+.field-table td {
+  padding: var(--s2) var(--s2); vertical-align: top;
+  border-bottom: 1px solid var(--col-border);
+  color: var(--txt-secondary); line-height: 1.6;
+}
+.field-table tr:hover td { background: var(--col-surface); }
+.field-name { font-weight: 600; color: var(--txt-primary); white-space: nowrap; }
+
+/* ── Red flags list ── */
+.redflag-list { list-style: none; padding: 0; margin: var(--s3) 0; }
+.redflag-list li {
+  display: flex; gap: var(--s2); align-items: flex-start;
+  padding: var(--s2) 0; border-bottom: 1px solid var(--col-border);
+  font-size: 15px; color: var(--txt-secondary); line-height: 1.65;
+}
+.redflag-list li:last-child { border-bottom: none; }
+.redflag-icon { flex-shrink: 0; color: #ff4d4d; font-size: 16px; margin-top: 2px; }
+
+/* ── CTA band ── */
+.cta-band {
+  background: linear-gradient(135deg, rgba(0,102,255,0.12) 0%, rgba(0,212,255,0.06) 100%);
+  border: 1px solid rgba(0,102,255,0.25);
+  border-radius: var(--r-2xl); padding: var(--s8) var(--s6);
+  text-align: center; margin: var(--s8) 0;
+}
+.cta-band h2 { font-size: clamp(22px, 3vw, 34px); font-weight: 800; letter-spacing: -0.025em; margin-bottom: var(--s2); }
+.cta-band p { font-size: 16px; color: var(--txt-secondary); max-width: 520px; margin: 0 auto var(--s4); line-height: 1.65; }
+
+/* ── Section divider ── */
+.section-divider { border: none; border-top: 1px solid var(--col-border); margin: var(--s6) 0; }
+
+/* ── Footer ── */
+footer {
+  position: relative; z-index: 20;
+  background: var(--col-bg-2); border-top: 1px solid var(--col-border);
+  padding: var(--s10) var(--s4) var(--s12); text-align: center;
+}
+.footer-logo { display: inline-flex; align-items: center; gap: var(--s2); margin-bottom: var(--s4); }
+.footer-logo-mark {
+  width: 36px; height: 36px;
+  background: linear-gradient(135deg, var(--blue), var(--electric));
+  border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 16px; color: #fff;
+}
+.footer-logo-name { font-size: 17px; font-weight: 700; letter-spacing: -0.02em; color: var(--txt-primary); }
+.footer-nav { display: flex; gap: var(--s5); justify-content: center; flex-wrap: wrap; margin-bottom: var(--s4); }
+.footer-nav a { font-size: 14px; color: var(--txt-secondary); text-decoration: none; transition: color var(--dur-fast); }
+.footer-nav a:hover { color: var(--electric); }
+.footer-divider { width: 48px; height: 1px; background: linear-gradient(90deg, transparent, var(--col-border-2), transparent); margin: var(--s4) auto; }
+footer .sig { font-size: 14px; font-weight: 600; color: var(--txt-secondary); }
+footer .ph { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--txt-tertiary); margin-top: var(--s1); }
+footer .legal {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--txt-tertiary);
+  margin-top: var(--s3); line-height: 1.75; max-width: 580px; margin-left: auto; margin-right: auto;
+}
+footer a { color: var(--electric); text-decoration: none; transition: opacity var(--dur-fast); }
+footer a:hover { opacity: 0.75; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .article-hero { padding: var(--s8) var(--s3) var(--s6); }
+  .article-body { padding: 0 var(--s3) var(--s8); }
+  .nav-link { display: none; }
+  .field-table { font-size: 13px; }
+  .cta-band { padding: var(--s5) var(--s3); }
+}
+@media (max-width: 480px) {
+  .cta-row { flex-direction: column; align-items: center; }
+  .btn { width: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Nav ── -->
+<nav id="navbar">
+  <a href="/" class="nav-logo" aria-label="TrustCOA home">
+    <div class="nav-logo-mark">T</div>
+    <span class="nav-logo-name">Trust<span>COA</span></span>
+  </a>
+  <div class="nav-actions">
+    <a href="verify.html" class="nav-link">See a live demo</a>
+    <a href="https://api.leadconnectorhq.com/widget/booking/B34bzkvHufP56WFsFhxm" class="nav-cta" target="_blank" rel="noopener">
+      Book a call <span class="arrow-icon"></span>
+    </a>
+  </div>
+</nav>
+
+<!-- ── Article hero ── -->
+<header class="article-hero">
+  <div class="kicker">COA Verification Guide</div>
+  <h1>How to Verify a Certificate of Analysis (COA): <span class="grad-text">A Complete Guide</span></h1>
+  <p class="hero-meta">Published 2026-06-30 &nbsp;&middot;&nbsp; By TrustCOA</p>
+  <p class="hero-lead">A Certificate of Analysis is only as useful as your ability to confirm it is authentic, unaltered, and tied to the exact batch you have in hand. This guide walks through every step of that process.</p>
+</header>
+
+<!-- ── Article body ── -->
+<main class="article-body" id="main-content">
+
+  <h2>What Is a Certificate of Analysis?</h2>
+  <p>A Certificate of Analysis (COA) is a formal document issued by an analytical laboratory reporting the test results for a specific batch of material. In the supplement, nutraceutical, and research compound industries, a COA is the primary way a brand communicates to a buyer what is actually in a product — and in what quantity — as measured by an independent instrument, not claimed by the manufacturer.</p>
+  <p>A COA is batch-specific. Each production run or lot receives its own COA drawn from representative samples of that run. A COA from a previous lot does not speak to the current one.</p>
+
+  <h2>Who Issues a Legitimate COA?</h2>
+  <p>Legitimate COAs are issued by accredited, independent third-party analytical laboratories — not by the brand or manufacturer selling the product. Self-issued documents from manufacturers are not COAs in any meaningful sense; they are manufacturer's specifications, which serve a different purpose.</p>
+  <p>The internationally recognized competence standard for analytical testing laboratories is <strong>ISO/IEC 17025</strong>. A laboratory accredited to ISO 17025 has been independently assessed for technical competence, calibration traceability, and measurement uncertainty by an accrediting body. In the United States, relevant accrediting bodies include A2LA (American Association for Laboratory Accreditation) and PJLA (Perry Johnson Laboratory Accreditation). Both maintain public, searchable registries of accredited labs.</p>
+  <p>You can verify a laboratory's accreditation status by looking up its accreditation number on the relevant body's registry directly — not by trusting the number printed on the COA itself.</p>
+
+  <h2>The Fields Every Real COA Must Include</h2>
+  <p>Understanding what a complete COA looks like is the first line of defense against altered or incomplete documents. Here are the required fields and what to look for in each:</p>
+
+  <table class="field-table" role="table" aria-label="COA required fields">
+    <thead>
+      <tr>
+        <th scope="col">Field</th>
+        <th scope="col">What it should contain</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="field-name">Product / compound name</td>
+        <td>The full chemical name or standard nomenclature of the compound tested. Abbreviated names alone are insufficient.</td>
+      </tr>
+      <tr>
+        <td class="field-name">Lot number / batch number</td>
+        <td>The unique identifier assigned to this specific production run. Must match the number on the physical label exactly.</td>
+      </tr>
+      <tr>
+        <td class="field-name">Sample receipt date</td>
+        <td>When the laboratory received the sample for testing. Should precede the test date.</td>
+      </tr>
+      <tr>
+        <td class="field-name">Test date / report date</td>
+        <td>When the testing was completed. Must be on or after receipt date; must not post-date production by an implausible margin.</td>
+      </tr>
+      <tr>
+        <td class="field-name">Laboratory identity</td>
+        <td>Full legal name, physical address, and contact information of the issuing lab. Verifiable independently.</td>
+      </tr>
+      <tr>
+        <td class="field-name">Accreditation number</td>
+        <td>The ISO 17025 (or equivalent) accreditation number. Verifiable via the accrediting body's public registry.</td>
+      </tr>
+      <tr>
+        <td class="field-name">Analytical method</td>
+        <td>The specific instrument and technique used for each analyte — e.g., HPLC (High-Performance Liquid Chromatography) for purity, LC-MS or LC-MS/MS for identity confirmation, ICP-MS for heavy metals.</td>
+      </tr>
+      <tr>
+        <td class="field-name">Results table</td>
+        <td>Each analyte tested, its measured value, unit of measurement (mg/mL, %, ppm, etc.), and specification limit.</td>
+      </tr>
+      <tr>
+        <td class="field-name">Pass / fail determination</td>
+        <td>An explicit statement for each analyte whether the result meets or fails the specification.</td>
+      </tr>
+      <tr>
+        <td class="field-name">Authorized signature</td>
+        <td>The name, title, and signature (or auditable digital equivalent) of the laboratory scientist responsible for the report.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>How to Confirm a COA Matches the Batch You Have</h2>
+  <p>Step one is physical: compare the lot number printed on the COA against the lot number on the physical label of your product. These must match character-for-character. A lot number that is close but not exact — a transposed digit, a different prefix — is not a match.</p>
+  <p>Step two is independent verification. Contact the issuing laboratory directly using contact information you source independently (from the accrediting body's registry or the lab's verified website), not from the COA document itself. Ask them to confirm the report number and lot number are on file. Reputable accredited labs will confirm or deny issuance of a specific report number.</p>
+  <p>Step three, where available, is to use the laboratory's own report verification portal, or a hosted verification platform. Some accredited labs offer a URL or portal where a report number can be entered to confirm authenticity. Hosted platforms — like TrustCOA — take a different approach: the brand publishes its COA data directly to a permanent, searchable URL on its own domain, so any buyer can look up the lot number and see the data without the file ever passing through an email chain or file-sharing service.</p>
+
+  <div class="callout">
+    <p><strong>Important context:</strong> TrustCOA is a display and hosting platform. We publish the COA files that brands upload from their accredited laboratories. We do not perform the analytical testing ourselves, certify laboratory credentials, or guarantee the accuracy of the underlying lab data. The chain of trust runs from the laboratory to the brand; TrustCOA makes that chain visible and persistent.</p>
+  </div>
+
+  <h2>Red Flags of Altered or Fake COAs</h2>
+  <p>COA fraud in supplement and research compound supply chains typically falls into three categories: recycled documents from a previous lot, copied laboratory letterhead with fabricated results, and edited PDFs where legitimate results have been modified. Here are the warning signs:</p>
+
+  <ul class="redflag-list" role="list">
+    <li>
+      <span class="redflag-icon" aria-hidden="true">&#9888;</span>
+      <span><strong>Lot number mismatch.</strong> The number on the COA does not exactly match the number on the physical label. This is the most common and most consequential discrepancy.</span>
+    </li>
+    <li>
+      <span class="redflag-icon" aria-hidden="true">&#9888;</span>
+      <span><strong>Test date inconsistency.</strong> The testing date predates the manufacturer's stated production or fill date, or is implausibly recent for a batch already in wide distribution.</span>
+    </li>
+    <li>
+      <span class="redflag-icon" aria-hidden="true">&#9888;</span>
+      <span><strong>Unverifiable accreditation.</strong> The accreditation number listed cannot be found in the relevant accrediting body's public registry, or the lab's address listed on the COA does not match official registry records.</span>
+    </li>
+    <li>
+      <span class="redflag-icon" aria-hidden="true">&#9888;</span>
+      <span><strong>No analytical method named.</strong> A legitimate COA names the method for each key analyte (HPLC, LC-MS/MS, Karl Fischer titration, etc.). A document that lists results without stating how they were measured provides no verifiable basis for those results.</span>
+    </li>
+    <li>
+      <span class="redflag-icon" aria-hidden="true">&#9888;</span>
+      <span><strong>Suspiciously round numbers.</strong> Real instrumental measurements rarely produce perfectly round values. A purity of exactly 99.00% across multiple compounds, or heavy metal results of exactly 0.00 ppm across all analytes, can indicate fabrication.</span>
+    </li>
+    <li>
+      <span class="redflag-icon" aria-hidden="true">&#9888;</span>
+      <span><strong>PDF metadata shows post-issue editing.</strong> PDF metadata (accessible via file properties or free tools like ExifTool) includes creation and modification timestamps. A modification date significantly after the document's stated issue date warrants scrutiny.</span>
+    </li>
+    <li>
+      <span class="redflag-icon" aria-hidden="true">&#9888;</span>
+      <span><strong>No signature or unverifiable signer.</strong> The document lacks an authorized signature, or lists a name that cannot be confirmed as a scientist affiliated with the named laboratory.</span>
+    </li>
+    <li>
+      <span class="redflag-icon" aria-hidden="true">&#9888;</span>
+      <span><strong>Brand refuses to name the laboratory.</strong> A legitimate brand should be able to name the third-party laboratory that tested each lot. Unwillingness to name the lab, or providing only initials, is a material omission.</span>
+    </li>
+  </ul>
+
+  <h2>Why Lot Number Matching Is the Most Critical Step</h2>
+  <p>A COA is a statement about a specific batch of material, not a compound category. Manufacturers produce multiple lots of a given compound over time. Raw material quality, synthesis conditions, potential contaminants, and degradation pathways can all vary between production runs. A passing COA from lot A provides no analytical basis for conclusions about lot B, even if both are the same compound from the same manufacturer.</p>
+  <p>The lot number is the chain-of-custody link that connects analytical data to specific physical material. Without exact lot number matching, a COA is nothing more than a document that demonstrates a manufacturer can produce a batch that passes testing — not that the batch you actually have passed testing.</p>
+
+  <h2>The Problem With PDF COAs and Emailed Documents</h2>
+  <p>The standard practice of distributing COAs as PDF files sent by email or shared via Google Drive or Dropbox has a structural security problem: PDF files can be edited, re-saved, and redistributed without any visible indication of tampering. A standard PDF viewer shows no modification history and no chain of custody. The burden of verification falls entirely on the recipient.</p>
+  <p>This creates a "trust me, here's a PDF" dynamic that benefits bad actors disproportionately. A buyer who cannot verify a document independently is forced to rely on the seller's assurance that the document is authentic — which is precisely the assurance that fraud is designed to provide.</p>
+  <p>Hosted verification addresses this at the infrastructure level. When a brand publishes its COA data to a permanent, publicly accessible URL — for example, on their own domain at <span class="mono" style="font-size:14px;color:var(--electric);">yourbrand.com/verify</span> — a buyer can navigate directly to that URL, type in a lot number, and see the data as published by the brand. No file passes through email. No PDF can be silently swapped out. The URL either returns data for that lot or it does not, with no intermediate layer where tampering can occur undetected.</p>
+  <p>This is the infrastructure problem TrustCOA is built to solve: not by running the laboratory tests, but by making the results of those tests permanently, independently accessible to the buyer at the moment they need to verify.</p>
+
+  <hr class="section-divider" />
+
+  <!-- Closing CTA -->
+  <div class="cta-band">
+    <div class="kicker">Hosted COA Verification</div>
+    <h2>Stop sending PDFs. <span class="grad-text">Publish the data.</span></h2>
+    <p>TrustCOA gives your brand a public /verify page on your own domain — batch lookup, QR per vial, your branding. Buyers verify independently, on your terms.</p>
+    <div class="cta-row">
+      <a href="https://api.leadconnectorhq.com/widget/booking/B34bzkvHufP56WFsFhxm" class="btn btn-primary" target="_blank" rel="noopener">
+        Book a 15-minute call <span class="arrow-icon"></span>
+      </a>
+    </div>
+  </div>
+
+  <h2>Summary: COA Verification Checklist</h2>
+  <ol>
+    <li>Confirm the lot number on the COA exactly matches the lot number on your physical product label.</li>
+    <li>Identify the issuing laboratory — full name, address, and accreditation number.</li>
+    <li>Verify the laboratory's accreditation status through the relevant accrediting body's public registry (A2LA, PJLA, or equivalent), not through the COA document itself.</li>
+    <li>Confirm an analytical method is named for each key analyte (HPLC, LC-MS/MS, ICP-MS, etc.).</li>
+    <li>Check that the test date is consistent with the production timeline and does not precede sample receipt.</li>
+    <li>Inspect PDF metadata for post-issue modification if the document is provided as a file.</li>
+    <li>Contact the laboratory directly (using independently sourced contact information) to confirm the report number is on file.</li>
+    <li>Prefer brands that publish COAs to a permanent, publicly accessible hosted URL rather than distributing only PDF files.</li>
+  </ol>
+
+</main>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-logo">
+    <div class="footer-logo-mark">T</div>
+    <span class="footer-logo-name">TrustCOA</span>
+  </div>
+  <div class="sig">Verification infrastructure for modern brands</div>
+  <div class="ph">(251) 387-7712</div>
+  <div class="footer-nav" style="margin-top:var(--s3);">
+    <a href="/">Home</a>
+    <a href="verify.html">Live demo</a>
+    <a href="how-to-verify-a-coa.html">Verify a COA</a>
+    <a href="what-a-real-coa-includes.html">Real vs. Fake COA</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="legal">
+    &copy; 2026 TrustCOA &mdash; a Smart Services LLC service.<br/>
+    TrustCOA is a display and hosting layer. We do not test, verify, or vouch for any compound &mdash; all lab data is supplied by the vendor and their independent labs, and remains the vendor's responsibility. Research-use-only infrastructure.<br/><br/>
+    <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms of Service</a>
+  </div>
+</footer>
+
+</body>
+</html>
