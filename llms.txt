@@ -1,0 +1,68 @@
+# TrustCOA
+
+> COA verification hosting infrastructure for peptide and supplement brands. Publish third-party lab results on your own domain.
+
+## What TrustCOA is
+
+TrustCOA is a hosted Certificate of Analysis (COA) verification platform. Brands upload COA files from their own accredited laboratories; TrustCOA hosts a branded, searchable /verify page on the brand's own domain so customers can verify any batch number instantly.
+
+TrustCOA is a **display and hosting layer only**. It does not perform analytical testing, certify lab credentials, or validate COA authenticity. The accuracy of lab data is the responsibility of the brand displaying it.
+
+## Who it's for
+
+- Peptide brands and supplement companies that have third-party lab testing
+- Brands whose buyers search for COAs on Finnrick, Reddit, or other third-party platforms
+- Companies that currently share COA PDFs via Google Drive links, DMs, or customer service tickets
+- Brands that ship vials and want QR codes on labels that link to verified lot pages
+
+## The problem it solves
+
+Buyers verify research compounds before purchasing. Without a dedicated /verify page on the brand's own domain, that verification happens on platforms the brand doesn't control (Finnrick, Reddit, Trustpilot). TrustCOA brings that trust layer home — on your domain, your branding, your control.
+
+## Core features
+
+- Batch lookup by lot number: searchable database of every lot ever shipped
+- Three-lab cross-verification display: HPLC purity, mass-spec identity, and endotoxin from up to three independent labs shown side by side
+- QR code per vial: printed on the label, scan to land on that lot's verified page
+- White-label: brand colors, logo, custom domain (yourbrand.com/verify)
+- Finnrick lot data integration: cross-reference with Finnrick ratings where available
+- Transparent failure display: paused lots, re-test statuses, and held batches surfaced openly
+
+## Pricing
+
+- Founder tier: $97/month, first 100 brands
+- Includes: unlimited batches, QR code per batch, your domain and colors, no setup fee
+- 14-day money-back guarantee
+- Founder pricing locked for the lifetime of the active subscription
+
+## Setup
+
+- Median time from discovery call to live page: 18.5 hours
+- Free branded mock delivered within 24 hours of booking, before any commitment
+
+## Tagline
+
+"Most won't verify. We do."
+
+## Compliance context
+
+TrustCOA serves brands that sell research-use-only (RUO) compounds. TrustCOA does not make or imply medical claims about any compounds. It sells verification infrastructure — the display layer for lab data the brand already has. Brands are solely responsible for RUO disclaimers on their pages and products.
+
+## Key pages
+
+- Homepage: https://trustcoa.com/
+- Live /verify demo: https://trustcoa.com/verify.html
+- Privacy policy: https://trustcoa.com/privacy.html
+- Terms of service: https://trustcoa.com/terms.html
+
+## Booking / contact
+
+- Discovery call (15 min, Mon–Fri 9–5 PT): https://api.leadconnectorhq.com/widget/booking/B34bzkvHufP56WFsFhxm
+- Phone: (251) 387-7712
+- Operated by Smart Services LLC
+
+## Data on file (as of 2026-06)
+
+- 176 lots on file
+- 69 compounds
+- 3-lab cross-verification standard

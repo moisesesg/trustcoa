@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>TrustCOA — COA Verification Infrastructure for Peptide Brands</title>
+<meta name="description" content="Host a public /verify page on your own domain. Three-lab cross-verified COAs, batch lookup, QR per vial — your colors, your URL, your control. $97/mo founder pricing." />
+<link rel="canonical" href="https://trustcoa.com/" />
+<meta property="og:title" content="TrustCOA — Verification infrastructure for peptide brands" />
+<meta property="og:description" content="Bring batch verification onto your own domain. The trust layer peptide brands have been missing. $97/mo founder pricing." />
+<meta property="og:url" content="https://trustcoa.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="TrustCOA" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="TrustCOA — COA Verification for Peptide Brands" />
+<meta name="twitter:description" content="Host a public /verify page on your own domain. Three-lab cross-verified COAs, batch lookup, QR per vial. $97/mo founder pricing." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<!-- Organization / WebSite / Service schema (verbatim from head-2026-06-30.html) -->
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://trustcoa.com/#org","name":"TrustCOA","url":"https://trustcoa.com/","description":"TrustCOA is a Certificate of Analysis (COA) verification platform. Businesses publish third-party lab results on their own domain; customers verify product testing in seconds.","logo":"https://app.trustcoa.com/favicon.ico"},{"@type":"WebSite","@id":"https://trustcoa.com/#site","url":"https://trustcoa.com/","name":"TrustCOA","publisher":{"@id":"https://trustcoa.com/#org"}},{"@type":"Service","name":"COA Verification Hosting","provider":{"@id":"https://trustcoa.com/#org"},"serviceType":"Certificate of Analysis verification and publishing","description":"Hosted COA verification: publish certificates of analysis from third-party laboratories on a branded domain with instant lookup."}]}</script>
+
+<!-- FAQPage schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is TrustCOA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TrustCOA is a hosted COA verification platform for peptide and supplement brands. We give you a public /verify page on your own domain where buyers can look up any batch number and see the lab results — HPLC purity, mass-spec identity, endotoxin — displayed clean, branded to you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the /verify page work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You upload your COA files and batch records to your TrustCOA dashboard. We host a public search page at yourbrand.com/verify (or a TrustCOA subdomain). A buyer types a batch number — or scans the QR code printed on your vial — and your lab results appear instantly. No DMs, no Google Drive links, no CS ticket."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does three-lab cross-verification mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Three-lab cross-verification means displaying COA data from three independent laboratories side by side for the same lot. When all three confirm identity and purity independently, the page shows a 3-of-3 match badge. If labs disagree, the discrepancy is surfaced transparently. TrustCOA displays your lab data — we are the display layer, not the laboratory."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does TrustCOA cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Founder pricing starts at $97/month for the first 100 brands. This tier includes unlimited COA batches, QR code per batch, your domain and branding, and no setup fee. Founder pricing is locked for the lifetime of your active subscription."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does TrustCOA test or authenticate my compounds?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. TrustCOA is a display and hosting layer. We host and display the COA files you upload from your own accredited laboratories. We do not perform analytical testing, certify lab credentials, or guarantee the accuracy of the underlying lab data. The accuracy and authenticity of laboratory data is the responsibility of the brand displaying it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does setup take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our median setup time is 18.5 hours from booking to live page. We build a skinned mock of your /verify page within 24 hours of your discovery call so you can see exactly what it will look like before committing."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+/* ============================================================
+   DESIGN SYSTEM — TrustCOA native static build
+   8px base grid · Electric-cobalt accent · Dark-mode premium
+   ============================================================ */
+:root {
+  --col-bg:        #05070f;
+  --col-bg-2:      #080c18;
+  --col-surface:   rgba(255,255,255,0.04);
+  --col-surface-2: rgba(255,255,255,0.07);
+  --col-border:    rgba(255,255,255,0.08);
+  --col-border-2:  rgba(255,255,255,0.14);
+  --blue:          #0066FF;
+  --blue-hi:       #338bff;
+  --electric:      #00d4ff;
+  --cobalt:        #1a4fff;
+  --txt-primary:   #f0f4ff;
+  --txt-secondary: rgba(240,244,255,0.65);
+  --txt-tertiary:  rgba(240,244,255,0.38);
+  --glow-blue:     rgba(0,102,255,0.28);
+  --glow-elec:     rgba(0,212,255,0.22);
+  --s1:  8px;  --s2:  16px; --s3:  24px; --s4:  32px;
+  --s5:  40px; --s6:  48px; --s8:  64px; --s10: 80px; --s12: 96px;
+  --r-sm:  8px; --r-md:  12px; --r-lg:  16px; --r-xl:  20px; --r-2xl: 28px;
+  --ease-out: cubic-bezier(0.16,1,0.3,1);
+  --dur-fast: 150ms; --dur-med: 240ms; --dur-slow: 400ms;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(0,102,255,0.1) 0%, transparent 60%),
+              radial-gradient(ellipse 60% 60% at 80% 80%, rgba(0,212,255,0.06) 0%, transparent 50%),
+              var(--col-bg);
+  color: var(--txt-primary);
+  font-family: 'Inter', -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
+  font-feature-settings: "ss01" on, "cv11" on, "rlig" on;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+.mono { font-family: 'JetBrains Mono', 'Fira Code', monospace; }
+:focus-visible { outline: 2px solid var(--electric); outline-offset: 3px; border-radius: var(--r-sm); }
+.grad-text {
+  background: linear-gradient(135deg, var(--blue-hi) 0%, var(--electric) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+/* ── Progress rail ── */
+#progress-rail {
+  position: fixed; top: 0; left: 0; height: 2px; width: 0%; z-index: 100;
+  background: linear-gradient(90deg, var(--blue), var(--electric));
+  transition: width 0.1s linear;
+}
+
+/* ── Nav ── */
+nav {
+  position: sticky; top: 0; left: 0; right: 0; z-index: 50;
+  padding: var(--s2) var(--s4);
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(5,7,15,0.85);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border-bottom: 1px solid var(--col-border);
+}
+.nav-logo { display: flex; align-items: center; gap: var(--s1); text-decoration: none; }
+.nav-logo-mark {
+  width: 32px; height: 32px;
+  background: linear-gradient(135deg, var(--blue), var(--electric));
+  border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 14px; color: #fff; box-shadow: 0 0 16px var(--glow-blue); flex-shrink: 0;
+}
+.nav-logo-name { font-size: 15px; font-weight: 700; letter-spacing: -0.02em; color: var(--txt-primary); }
+.nav-logo-name span { background: linear-gradient(135deg, var(--blue-hi), var(--electric)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.nav-actions { display: flex; align-items: center; gap: var(--s2); }
+.nav-link { font-size: 14px; font-weight: 500; color: var(--txt-secondary); text-decoration: none; transition: color var(--dur-fast); }
+.nav-link:hover { color: var(--txt-primary); }
+.nav-cta {
+  display: inline-flex; align-items: center; gap: var(--s1);
+  padding: 9px var(--s2); border-radius: var(--r-md);
+  background: var(--blue); color: #fff; font-size: 14px; font-weight: 600; text-decoration: none;
+  box-shadow: 0 4px 16px var(--glow-blue);
+  transition: transform var(--dur-fast), box-shadow var(--dur-fast);
+}
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 28px var(--glow-blue); }
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 15px 28px; border-radius: var(--r-lg);
+  font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600;
+  text-decoration: none; cursor: pointer; border: none;
+  transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out);
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--blue) 0%, var(--cobalt) 100%);
+  color: #fff;
+  box-shadow: 0 0 0 1px rgba(0,102,255,0.4), 0 8px 32px var(--glow-blue);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 0 1px rgba(0,102,255,0.6), 0 16px 48px var(--glow-blue); }
+.btn-primary:active { transform: translateY(0); }
+.btn-ghost {
+  background: transparent; color: var(--txt-secondary);
+  border: 1px solid var(--col-border-2);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+}
+.btn-ghost:hover { border-color: var(--electric); color: var(--electric); box-shadow: 0 0 24px var(--glow-elec); }
+.arrow-icon::after { content: '→'; font-style: normal; transition: transform var(--dur-fast) var(--ease-out); display: inline-block; }
+.btn:hover .arrow-icon::after { transform: translateX(3px); }
+.cta-row { display: flex; gap: var(--s2); justify-content: center; flex-wrap: wrap; margin-top: var(--s4); }
+
+/* ── Section base ── */
+section { padding: var(--s12) var(--s4); position: relative; }
+.section-inner { max-width: 820px; margin: 0 auto; text-align: center; }
+.section-inner.wide { max-width: 1040px; }
+section + section { border-top: 1px solid var(--col-border); }
+
+/* ── Kicker ── */
+.kicker {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--electric);
+  margin-bottom: var(--s2); display: inline-flex; align-items: center; gap: var(--s1);
+}
+.kicker::before {
+  content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--electric); box-shadow: 0 0 10px var(--electric);
+  animation: kicker-pulse 2s ease-in-out infinite;
+}
+@keyframes kicker-pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.4; transform:scale(0.8); } }
+
+/* ── Hero ── */
+#hero { padding: var(--s12) var(--s4) var(--s10); }
+#hero h1 {
+  font-size: clamp(40px, 7vw, 80px); font-weight: 800; letter-spacing: -0.04em; line-height: 1.03;
+  margin-bottom: var(--s3);
+}
+#hero .hero-body { font-size: clamp(16px, 1.9vw, 20px); color: var(--txt-secondary); max-width: 600px; margin: 0 auto var(--s4); line-height: 1.65; }
+
+/* ── Domain callout ── */
+.callout-domain {
+  display: inline-block; font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(13px, 1.6vw, 16px); font-weight: 600; color: var(--electric);
+  background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.24);
+  border-radius: var(--r-sm); padding: 4px 12px; margin-bottom: var(--s2);
+}
+
+/* ── Stats bar ── */
+.stats-bar { display: flex; gap: var(--s5); justify-content: center; flex-wrap: wrap; margin-top: var(--s8); }
+.stat-item { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.stat-num {
+  font-size: clamp(28px, 3.2vw, 42px); font-weight: 800; letter-spacing: -0.04em;
+  background: linear-gradient(135deg, var(--txt-primary) 0%, var(--electric) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.stat-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: var(--txt-tertiary); text-transform: uppercase; }
+
+/* ── Features grid ── */
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--s4); margin-top: var(--s8); text-align: left; }
+.feature-card {
+  background: var(--col-surface); border: 1px solid var(--col-border);
+  border-radius: var(--r-xl); padding: var(--s5); position: relative; overflow: hidden;
+  transition: border-color var(--dur-med) var(--ease-out), transform var(--dur-med) var(--ease-out);
+}
+.feature-card:hover { border-color: rgba(0,212,255,0.3); transform: translateY(-2px); }
+.feature-card::before {
+  content: ''; position: absolute; inset: 0; opacity: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,102,255,0.08) 0%, transparent 70%);
+  transition: opacity var(--dur-med);
+}
+.feature-card:hover::before { opacity: 1; }
+.feature-icon { font-size: 28px; margin-bottom: var(--s2); display: block; }
+.feature-card h3 { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: var(--s1); }
+.feature-card p { font-size: 14px; color: var(--txt-secondary); line-height: 1.65; }
+
+/* ── How it works ── */
+.steps { display: flex; flex-direction: column; gap: var(--s5); margin-top: var(--s8); text-align: left; max-width: 680px; margin-left: auto; margin-right: auto; }
+.step { display: flex; gap: var(--s4); align-items: flex-start; }
+.step-num {
+  flex-shrink: 0; width: 40px; height: 40px;
+  background: linear-gradient(135deg, var(--blue), var(--cobalt));
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 15px; color: #fff; box-shadow: 0 0 20px var(--glow-blue); margin-top: 2px;
+}
+.step-content h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.01em; }
+.step-content p { font-size: 14px; color: var(--txt-secondary); line-height: 1.65; }
+
+/* ── Demo CTA band ── */
+.demo-band {
+  background: linear-gradient(135deg, rgba(0,102,255,0.12) 0%, rgba(0,212,255,0.06) 100%);
+  border: 1px solid rgba(0,102,255,0.25);
+  border-radius: var(--r-2xl); padding: var(--s8) var(--s6);
+  margin: 0 auto; max-width: 760px;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+}
+.demo-band h2 { font-size: clamp(26px, 4vw, 44px); font-weight: 800; letter-spacing: -0.03em; margin-bottom: var(--s2); }
+.demo-band p { font-size: 16px; color: var(--txt-secondary); max-width: 520px; margin: 0 auto var(--s4); }
+
+/* ── Booking iframe ── */
+.booking-section { background: var(--col-bg-2); }
+.booking-wrap {
+  max-width: 820px; margin: 0 auto;
+  background: var(--col-surface); border: 1px solid var(--col-border);
+  border-radius: var(--r-2xl); overflow: hidden; min-height: 620px;
+}
+.booking-wrap iframe { width: 100%; height: 700px; border: none; display: block; }
+
+/* ── Pricing ── */
+.pricing-card {
+  max-width: 520px; margin: var(--s8) auto 0;
+  background: var(--col-surface); border: 1px solid rgba(0,102,255,0.3);
+  border-radius: var(--r-2xl); padding: var(--s8) var(--s6); text-align: center;
+  box-shadow: 0 0 80px rgba(0,102,255,0.12), 0 0 0 1px rgba(0,102,255,0.15);
+  position: relative; overflow: hidden;
+}
+.pricing-card::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,102,255,0.1) 0%, transparent 65%);
+}
+.price-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--electric); margin-bottom: var(--s1); }
+.price-amt { font-size: clamp(64px, 10vw, 96px); font-weight: 800; letter-spacing: -0.05em; line-height: 1; color: var(--txt-primary); }
+.price-amt .per { font-size: 0.28em; font-weight: 600; color: var(--txt-tertiary); letter-spacing: -0.01em; }
+.pricing-body { font-size: 15px; color: var(--txt-secondary); max-width: 380px; margin: var(--s3) auto; line-height: 1.65; }
+.feature-list {
+  display: flex; flex-wrap: wrap; gap: var(--s1) var(--s4); justify-content: center;
+  margin: var(--s4) auto var(--s1); max-width: 420px;
+  font-family: 'JetBrains Mono', monospace; font-size: 13px;
+  color: var(--txt-secondary); list-style: none;
+}
+.feature-list li::before { content: '✓ '; color: var(--electric); font-weight: 700; }
+.disclaimer-text { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--txt-tertiary); max-width: 420px; margin: var(--s3) auto 0; line-height: 1.65; }
+
+/* ── FAQ ── */
+.faq-list { margin-top: var(--s8); max-width: 720px; margin-left: auto; margin-right: auto; }
+.faq-item {
+  border-bottom: 1px solid var(--col-border); padding: var(--s4) 0;
+  text-align: left;
+}
+.faq-item:first-child { border-top: 1px solid var(--col-border); }
+.faq-q { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: var(--s2); cursor: pointer; }
+.faq-q:hover { color: var(--electric); }
+.faq-a { font-size: 15px; color: var(--txt-secondary); line-height: 1.7; }
+
+/* ── Section headings ── */
+.section-h2 { font-size: clamp(28px, 4.5vw, 52px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: var(--s3); }
+.section-lead { font-size: 17px; color: var(--txt-secondary); max-width: 580px; margin: 0 auto; line-height: 1.65; }
+
+/* ── Footer ── */
+footer {
+  position: relative; z-index: 20;
+  background: var(--col-bg-2); border-top: 1px solid var(--col-border);
+  padding: var(--s10) var(--s4) var(--s12); text-align: center;
+}
+.footer-logo { display: inline-flex; align-items: center; gap: var(--s2); margin-bottom: var(--s4); }
+.footer-logo-mark {
+  width: 36px; height: 36px;
+  background: linear-gradient(135deg, var(--blue), var(--electric));
+  border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 16px; color: #fff;
+}
+.footer-logo-name { font-size: 17px; font-weight: 700; letter-spacing: -0.02em; color: var(--txt-primary); }
+.footer-nav { display: flex; gap: var(--s5); justify-content: center; flex-wrap: wrap; margin-bottom: var(--s4); }
+.footer-nav a { font-size: 14px; color: var(--txt-secondary); text-decoration: none; transition: color var(--dur-fast); }
+.footer-nav a:hover { color: var(--electric); }
+.footer-divider { width: 48px; height: 1px; background: linear-gradient(90deg, transparent, var(--col-border-2), transparent); margin: var(--s4) auto; }
+footer .sig { font-size: 14px; font-weight: 600; color: var(--txt-secondary); }
+footer .ph { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--txt-tertiary); margin-top: var(--s1); }
+footer .legal {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--txt-tertiary);
+  margin-top: var(--s3); line-height: 1.75; max-width: 580px; margin-left: auto; margin-right: auto;
+}
+footer a { color: var(--electric); text-decoration: none; transition: opacity var(--dur-fast); }
+footer a:hover { opacity: 0.75; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  section { padding: var(--s8) var(--s3); }
+  #hero { padding: var(--s8) var(--s3) var(--s6); }
+  .nav-link { display: none; }
+  .features-grid { grid-template-columns: 1fr; }
+  .booking-wrap iframe { height: 560px; }
+  .demo-band { padding: var(--s5) var(--s3); }
+  .stats-bar { gap: var(--s4); }
+}
+@media (max-width: 480px) {
+  .cta-row { flex-direction: column; align-items: center; }
+  .btn { width: 100%; justify-content: center; }
+  .step { flex-direction: column; gap: var(--s2); }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+</style>
+</head>
+<body>
+
+<div id="progress-rail"></div>
+
+<!-- ── Nav ── -->
+<nav id="navbar">
+  <a href="/" class="nav-logo" aria-label="TrustCOA home">
+    <div class="nav-logo-mark">T</div>
+    <span class="nav-logo-name">Trust<span>COA</span></span>
+  </a>
+  <div class="nav-actions">
+    <a href="verify.html" class="nav-link">See a live demo</a>
+    <a href="https://api.leadconnectorhq.com/widget/booking/B34bzkvHufP56WFsFhxm" class="nav-cta" target="_blank" rel="noopener">
+      Book a call <span class="arrow-icon"></span>
+    </a>
+  </div>
+</nav>
+
+<!-- ====================================================
+     HERO
+     ==================================================== -->
+<section id="hero">
+  <div class="section-inner">
+    <div class="kicker">A buyer just searched your brand</div>
+    <h1>What they find next <span class="grad-text">decides the sale.</span></h1>
+    <p class="hero-body">Right now, the first credibility check on your research compounds happens on Finnrick, Reddit, or Trustpilot — platforms you don't control, on pages that aren't yours. TrustCOA brings that verification home.</p>
+    <div class="callout-domain">yourbrand.com/verify</div>
+    <div class="cta-row">
+      <a href="https://api.leadconnectorhq.com/widget/booking/B34bzkvHufP56WFsFhxm" class="btn btn-primary" target="_blank" rel="noopener">
+        Book a discovery call <span class="arrow-icon"></span>
+      </a>
+      <a href="verify.html" class="btn btn-ghost">
+        See a live /verify demo
+      </a>
+    </div>
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-num">176</div>
+        <div class="stat-label">Lots on file</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">69</div>
+        <div class="stat-label">Compounds</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3&times;</div>
+        <div class="stat-label">Lab verified</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">18.5h</div>
+        <div class="stat-label">Median setup</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     THE PROBLEM
+     ==================================================== -->
+<section id="problem">
+  <div class="section-inner">
+    <div class="kicker">The trust gap</div>
+    <h2 class="section-h2">Most won't verify. <span class="grad-text">We do.</span></h2>
+    <p class="section-lead">Buyers are searching your brand before they order. When they can't find your COAs — or find them on a platform you don't control — that's a conversion you don't get back. TrustCOA is the verification infrastructure built to close that gap.</p>
+  </div>
+</section>
+
+<!-- ====================================================
+     FEATURES
+     ==================================================== -->
+<section id="features">
+  <div class="section-inner wide">
+    <div class="kicker">What lives on your /verify page</div>
+    <h2 class="section-h2">Everything a serious buyer <span class="grad-text">needs to trust you.</span></h2>
+    <p class="section-lead">One page, your domain, your branding. Every feature built around the moment a buyer decides to buy or bounce.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="feature-icon">🔍</span>
+        <h3>Batch lookup by lot number</h3>
+        <p>Every lot you've ever shipped — searchable by batch number. The buyer types a code, the COA appears. No DMs, no Google Drive links, no CS bottleneck. Available 24/7 on your domain.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🧪</span>
+        <h3>Three-lab cross-verification display</h3>
+        <p>HPLC purity, mass-spec identity, endotoxin — from three independent labs, displayed side by side. A 3-of-3 match is a sales argument no competitor screenshot can fake. Discrepancies surfaced transparently.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📱</span>
+        <h3>QR code per vial</h3>
+        <p>Every batch ships with its own QR code. A buyer scans the vial, lands on the verified lot page instantly — no typing, no searching. Printed on your label, powered by TrustCOA.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🎨</span>
+        <h3>Your brand, your domain</h3>
+        <p>White-labeled to your colors and logo. Hosted at yourbrand.com/verify or a custom subdomain. Visitors never leave your brand ecosystem. Setup in a median 18.5 hours from booking.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📊</span>
+        <h3>Finnrick lot data integration</h3>
+        <p>Display Finnrick lot ratings alongside your own lab data. When your batch appears on Finnrick, that data surfaces on your page — cross-referenced, not buried in someone else's interface.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🔒</span>
+        <h3>Transparent failures build more trust</h3>
+        <p>When a lot doesn't pass spec, you can show that too — with a hold status, re-test status, and public decision log. Transparency about what you don't ship is the strongest trust signal you have.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     HOW IT WORKS
+     ==================================================== -->
+<section id="how-it-works">
+  <div class="section-inner">
+    <div class="kicker">Setup in hours, not weeks</div>
+    <h2 class="section-h2">From booking to live <span class="grad-text">in 18.5 hours.</span></h2>
+    <p class="section-lead">We handle the tech. You handle the lab relationships. Here's how it works end to end.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Book a 15-minute discovery call</h3>
+          <p>Tell us your brand name, how many COAs you maintain, and where you currently send buyers who ask about lab results. We'll assess fit and scope the setup.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>We build a skinned mock in 24 hours</h3>
+          <p>Before you commit, we build a demo of your /verify page in your brand colors, with your logo. You see exactly what your buyers will see before paying a cent.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Upload your COAs and go live</h3>
+          <p>You upload your COA files to your dashboard. We configure your domain, set up batch search, and generate QR codes for your vials. Median time from booking to live: 18.5 hours.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h3>Add new batches as you ship</h3>
+          <p>Every new lot gets added to your dashboard. New QR codes generated automatically. Buyers who scan old and new vials always land on verified, current data — on your domain.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     DEMO BAND — LINK TO VERIFY PAGE
+     ==================================================== -->
+<section id="demo-section">
+  <div class="section-inner">
+    <div class="demo-band">
+      <div class="kicker">See it working</div>
+      <h2>What your buyers will see — <span class="grad-text">right now.</span></h2>
+      <p>Open the live demo verification page. This is what a buyer lands on when they scan the QR on a vial or type in a batch number. Skinned to "Example Peptide Co." — yours would have your branding.</p>
+      <div class="cta-row">
+        <a href="verify.html" class="btn btn-primary">
+          Open live /verify demo <span class="arrow-icon"></span>
+        </a>
+        <a href="https://api.leadconnectorhq.com/widget/booking/B34bzkvHufP56WFsFhxm" class="btn btn-ghost" target="_blank" rel="noopener">
+          Book a call instead
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     PRICING
+     ==================================================== -->
+<section id="pricing">
+  <div class="section-inner">
+    <div class="kicker">Founder pricing — first 100 brands</div>
+    <h2 class="section-h2">Simple, flat pricing. <span class="grad-text">No surprises.</span></h2>
+    <p class="section-lead">One tier, everything included. Locked at this price for the first 100 brands for the lifetime of your active subscription.</p>
+    <div class="pricing-card">
+      <div class="price-label">Starting at — Founder tier</div>
+      <div class="price-amt">$97<span class="per"> / month</span></div>
+      <p class="pricing-body">Unlimited COAs, skinned to your domain, median 18.5-hour setup. Locked at this price for the first 100 brands.</p>
+      <ul class="feature-list" role="list">
+        <li>Unlimited batches</li>
+        <li>QR code per batch</li>
+        <li>Your colors &amp; URL</li>
+        <li>No setup fee</li>
+        <li>Finnrick lot data</li>
+        <li>14-day money-back</li>
+      </ul>
+      <div class="cta-row">
+        <a href="https://api.leadconnectorhq.com/widget/booking/B34bzkvHufP56WFsFhxm" class="btn btn-primary" target="_blank" rel="noopener">
+          Book your discovery call <span class="arrow-icon"></span>
+        </a>
+      </div>
+      <p class="disclaimer-text">TrustCOA hosts and displays your lab's COAs. We don't test compounds or vouch for them — the data is yours, supplied by your labs. We are the display layer.</p>
+      <p class="mono" style="font-size:12px;margin-top:10px;color:var(--txt-tertiary);">Or call (251) 387-7712</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     FAQ
+     ==================================================== -->
+<section id="faq">
+  <div class="section-inner">
+    <div class="kicker">Common questions</div>
+    <h2 class="section-h2">Everything you need <span class="grad-text">to know.</span></h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <h3 class="faq-q">What is TrustCOA?</h3>
+        <p class="faq-a">TrustCOA is a hosted COA verification platform for peptide and supplement brands. We give you a public /verify page on your own domain where buyers can look up any batch number and see the lab results — HPLC purity, mass-spec identity, endotoxin — displayed clean, branded to you.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-q">How does the /verify page work?</h3>
+        <p class="faq-a">You upload your COA files and batch records to your TrustCOA dashboard. We host a public search page at yourbrand.com/verify (or a TrustCOA subdomain). A buyer types a batch number — or scans the QR code printed on your vial — and your lab results appear instantly. No DMs, no Google Drive links, no CS ticket.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-q">What does three-lab cross-verification mean?</h3>
+        <p class="faq-a">Three-lab cross-verification means displaying COA data from three independent laboratories side by side for the same lot. When all three confirm identity and purity independently, the page shows a 3-of-3 match badge. If labs disagree, the discrepancy is surfaced transparently. TrustCOA displays your lab data — we are the display layer, not the laboratory.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-q">How much does TrustCOA cost?</h3>
+        <p class="faq-a">Founder pricing starts at $97/month for the first 100 brands. This tier includes unlimited COA batches, QR code per batch, your domain and branding, and no setup fee. Founder pricing is locked for the lifetime of your active subscription.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-q">Does TrustCOA test or authenticate my compounds?</h3>
+        <p class="faq-a">No. TrustCOA is a display and hosting layer. We host and display the COA files you upload from your own accredited laboratories. We do not perform analytical testing, certify lab credentials, or guarantee the accuracy of the underlying lab data. The accuracy and authenticity of laboratory data is the responsibility of the brand displaying it.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="faq-q">How long does setup take?</h3>
+        <p class="faq-a">Our median setup time is 18.5 hours from booking to live page. We build a skinned mock of your /verify page within 24 hours of your discovery call so you can see exactly what it will look like before committing.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     BOOKING SECTION (embedded widget)
+     ==================================================== -->
+<section id="book" class="booking-section">
+  <div class="section-inner">
+    <div class="kicker">Get started</div>
+    <h2 class="section-h2">Book a 15-minute <span class="grad-text">discovery call.</span></h2>
+    <p class="section-lead" style="margin-bottom:var(--s6);">We'll scope your setup, answer questions, and have a branded mock ready within 24 hours of your call. No commitment required.</p>
+    <div class="booking-wrap">
+      <iframe
+        src="https://api.leadconnectorhq.com/widget/booking/B34bzkvHufP56WFsFhxm"
+        title="Book a TrustCOA discovery call"
+        loading="lazy"
+        allow="camera; microphone"
+      ></iframe>
+    </div>
+    <p class="mono" style="font-size:12px;color:var(--txt-tertiary);margin-top:var(--s3);text-align:center;">
+      Prefer the phone? Call (251) 387-7712
+    </p>
+  </div>
+</section>
+
+<!-- ====================================================
+     FINAL CTA
+     ==================================================== -->
+<section id="final-cta">
+  <div class="section-inner">
+    <div class="demo-band">
+      <div class="kicker">Ready when you are</div>
+      <h2>Your buyers are already <span class="grad-text">checking.</span></h2>
+      <p>Give them a page to land on. Verification on your domain, your branding, your control. $97/mo — no setup fee — 14-day money-back.</p>
+      <div class="cta-row">
+        <a href="https://api.leadconnectorhq.com/widget/booking/B34bzkvHufP56WFsFhxm" class="btn btn-primary" target="_blank" rel="noopener">
+          Book a discovery call <span class="arrow-icon"></span>
+        </a>
+        <a href="verify.html" class="btn btn-ghost">
+          See the /verify demo first
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     FOOTER
+     ==================================================== -->
+<footer>
+  <div class="footer-logo">
+    <div class="footer-logo-mark">T</div>
+    <span class="footer-logo-name">TrustCOA</span>
+  </div>
+  <div class="sig">Verification infrastructure for modern brands</div>
+  <div class="ph">(251) 387-7712</div>
+  <div class="footer-nav" style="margin-top:var(--s3);">
+    <a href="verify.html">Live demo</a>
+    <a href="#faq">FAQ</a>
+    <a href="#book">Book a call</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="legal">
+    &copy; 2026 TrustCOA &mdash; a Smart Services LLC service.<br/>
+    TrustCOA is a display and hosting layer. We do not test, verify, or vouch for any compound — all lab data is supplied by the vendor and their independent labs, and remains the vendor's responsibility. Research-use-only infrastructure.<br/><br/>
+    <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms of Service</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Progress rail
+  var rail = document.getElementById('progress-rail');
+  if (rail) {
+    window.addEventListener('scroll', function () {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      if (max > 0) rail.style.width = (window.scrollY / max * 100).toFixed(1) + '%';
+    }, { passive: true });
+  }
+})();
+</script>
+
+</body>
+</html>
